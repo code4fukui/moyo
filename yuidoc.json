@@ -1,7 +1,7 @@
 {
     "name": "Moyo",
     "description": "Moyo: a library that draws geometric patterns.",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "url": "https://yuchoho.com/moyo",
     "options": {
     	"extension": ".coffee",

@@ -1,12 +1,12 @@
 {
   "name": "moyo",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "I draw geometric patterns.",
-  "main": "index.js",
+  "main": "src/main.coffee",
   "scripts": {
     "build": "npm run clean && npm run compile && npm run doc",
-    "browserify": "rimraf dist && browserify src/main.coffee -t coffeeify -t browserify-shim -o dist/moyo.js && copyfiles src/test.html -f dist",
-    "clean:": "rimraf out",
+    "browserify": "rimraf dist && browserify src/browser.coffee -t coffeeify -t browserify-shim -o dist/moyo.js",
+    "clean": "rimraf out dist",
     "compile": "coffee -c -o out/ src/",
     "doc": "yuidoc -o doc/ src/",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -48,5 +48,6 @@
     "rimraf": "^2.6.2",
     "taskgroup": "^5.0.1",
     "yuidocjs": "^0.10.2"
-  }
+  },
+  "files": ["src"]
 }

@@ -365,25 +365,27 @@ class PenroseKiteAndDart
 # @param [...attrs] {Array} Attributes for each tile types (2 types for rhombus and knd, 3 for original).
 # @return {SVG.Set} Set of sets containing tiles of the same type.
 ###
-svg.extend SVG.Container,
-	penrose: (width, opts, attrs...) ->
-		# Overwrite default options
-		options = Object.assign {type:"rhombus", inflation:new SVG.Number(7), rim: "clip"}, opts
-		options.size = new SVG.Number width ? 100
-		options.inflation = new SVG.Number options.inflation
+module.exports = (svg) ->
+	SVG = svg
+	svg.extend SVG.Container,
+		penrose: (width, opts, attrs...) ->
+			# Overwrite default options
+			options = Object.assign {type:"rhombus", inflation:new SVG.Number(7), rim: "clip"}, opts
+			options.size = new SVG.Number width ? 100
+			options.inflation = new SVG.Number options.inflation
 
-		# Sanity check
-		if options.size.unit != '' then throw new Error "width must be a unitless number."
-		if not ["rhombus", "rhombs", "kite and dart", "kites and darts", "knd", "original"].includes options.type then throw new Error '"'+options.type+'"'+"is an invalid type."
-		if options.inflation.unit != '' then throw new Error "inflation must be a unitless number."
+			# Sanity check
+			if options.size.unit != '' then throw new Error "width must be a unitless number."
+			if not ["rhombus", "rhombs", "kite and dart", "kites and darts", "knd", "original"].includes options.type then throw new Error '"'+options.type+'"'+"is an invalid type."
+			if options.inflation.unit != '' then throw new Error "inflation must be a unitless number."
 
-		# Instantiate
-		switch options.type
-			when "rhombus" then pr = new PenroseRhombus(options)
+			# Instantiate
+			switch options.type
+				when "rhombus" then pr = new PenroseRhombus(options)
 
-		# Generate tiles
-		pr.createFirstTile options.size.valueOf()
-		pr.inflate options.inflation.valueOf()
+			# Generate tiles
+			pr.createFirstTile options.size.valueOf()
+			pr.inflate options.inflation.valueOf()
 
-		# Alas, draw it
-		pr.drawTiles @
+			# Alas, draw it
+			pr.drawTiles @

@@ -1,7 +1,9 @@
 ###*
 # Entry point for Moyo.
 ###
-require './lib/penrose.coffee'
+module.exports = (element) ->
+	svg = require('svgjs')(element)
 
-if window? then window.Moyo = require 'svgjs'
-module.exports = require 'svgjs'
+	require('./lib/penrose')(svg)
+
+	svg
