@@ -1,5 +1,6 @@
-# Moyo - geometric pattern extension for [SVG.js](http://svgjs.com)
+# Moyo
 
+geometric pattern extension for [SVG.js](http://svgjs.com)
 
 ## Usage
 
@@ -18,3 +19,8 @@ draw.penrose(600, { type: "rhombus" });  // type only "rhombus" now
 //draw.penrose(600, { type: "rhombus", inflation: 5, rim: "clip" }, { fill: "hsl(30 90% 30%)" }, { fill: "hsl(80 90% 30%)" });
 </script>
 ```
+- [edit on ES-Jam](https://ss.sabae.cc/#504)
+
+## src
+
+- forked [yucho/moyo](https://github.com/yucho/moyo)
