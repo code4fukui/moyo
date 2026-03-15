@@ -1,6 +1,8 @@
 # Moyo
 
-geometric pattern extension for [SVG.js](http://svgjs.com)
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
+Moyo is a geometric pattern extension for [SVG.js](http://svgjs.com).
 
 ## Usage
 
