@@ -26,3 +26,7 @@ draw.penrose(600, { type: "rhombus" });  // type only "rhombus" now
 ## src
 
 - forked [yucho/moyo](https://github.com/yucho/moyo)
+
+## License
+
+MIT License — see [LICENSE](LICENSE).
